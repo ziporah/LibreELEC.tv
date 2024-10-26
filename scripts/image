@@ -154,6 +154,7 @@ if [ "${CUSTOM_FOLDERS}x" != "x" ]; then
   ln -sfn /storage/rancher/etc-cni ${INSTALL}/etc/cni
   ln -sfn /storage/rancher/etc ${INSTALL}/etc/rancher
   ln -sfn /storage/rancher/etc-containerd ${INSTALL}/etc/containerd
+  ln -sfn /storage/rancher/etc-calico ${INSTALL}/etc/calico
   ln -sfn /storage/rancher/libexec ${INSTALL}/usr/libexec/kubernetes
   ln -sfn /storage/opt ${INSTALL}/opt
 
