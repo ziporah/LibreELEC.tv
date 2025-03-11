@@ -148,7 +148,7 @@ ln -sfn /usr/sbin ${INSTALL}/sbin
 
 # Create custom folders and symlinks
 if [ "${CUSTOM_FOLDERS}x" != "x" ]; then
-  for directory in mnt/microk8s net/backup net/rpi net/samba net/tftpboot net/torrent net/video storage/rancher/etc-cni storage/rancher/etc-containerd storage/rancher/etc storage/rancher/libexec storage/opt; do
+  for directory in mnt/microk8s net/backup net/rpi net/samba net/tftpboot net/torrent net/video storage/rancher/etc-cni storage/rancher/etc-containerd storage/rancher/etc storage/rancher/libexec storage/opt storage/boot; do
     mkdir -p ${INSTALL}/${directory}
   done
   ln -sfn /storage/rancher/etc-cni ${INSTALL}/etc/cni
@@ -157,6 +157,7 @@ if [ "${CUSTOM_FOLDERS}x" != "x" ]; then
   ln -sfn /storage/rancher/etc-calico ${INSTALL}/etc/calico
   ln -sfn /storage/rancher/libexec ${INSTALL}/usr/libexec/kubernetes
   ln -sfn /storage/opt ${INSTALL}/opt
+  ln -sfn /storage/custom-boot ${INSTALL}/boot
 
 #  ln -sfn /storage/rancher/var/rancher ${INSTALL}/var/lib/rancher
 #  ln -sfn /storage/rancher/var/calico ${INSTALL}/var/lib/calico
